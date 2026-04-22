@@ -1,10 +1,10 @@
 # Sequential Thinking MCP
 
-Hosted bridge for the official Sequential Thinking MCP server.
+Hosted Streamable HTTP server for Sequential Thinking.
 
 ## Purpose
 
-Expose the stdio-based `@modelcontextprotocol/server-sequential-thinking` package as a public streamable HTTP MCP endpoint that ChatGPT developer mode can connect to.
+Expose Sequential Thinking as a public Streamable HTTP MCP endpoint that ChatGPT developer mode can connect to.
 
 ## Local usage
 
@@ -17,6 +17,11 @@ The local endpoints are:
 
 - Health check: `http://127.0.0.1:8000/healthz`
 - MCP endpoint: `http://127.0.0.1:8000/mcp`
+
+## Implementation notes
+
+This project uses the official MCP SDK's native `StreamableHTTPServerTransport` instead of a stdio bridge.
+Each MCP session gets its own in-memory Sequential Thinking state so thought history is preserved across tool calls within the same session.
 
 ## Deployment
 
