@@ -1,0 +1,17 @@
+{
+  "name": "sequential-thinking-mcp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hosted Sequential Thinking MCP bridge for ChatGPT developer mode.",
+  "scripts": {
+    "start": "supergateway --stdio \"mcp-server-sequential-thinking\" --outputTransport streamableHttp --port \"$PORT\" --stateful --streamableHttpPath /mcp --healthEndpoint /healthz --logLevel info",
+    "start:local": "supergateway --stdio \"mcp-server-sequential-thinking\" --outputTransport streamableHttp --port 8000 --stateful --streamableHttpPath /mcp --healthEndpoint /healthz --logLevel info"
+  },
+  "engines": {
+    "node": ">=22 <26"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server-sequential-thinking": "2025.12.18",
+    "supergateway": "3.4.3"
+  }
+}

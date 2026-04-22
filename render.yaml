@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: sequential-thinking-mcp
+    runtime: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    autoDeploy: false
+    healthCheckPath: /healthz
